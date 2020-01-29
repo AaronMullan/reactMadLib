@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import Result from './Result';
+import Button from '../Button/Button';
 
 export default class Madlib extends Component{
   state = {
