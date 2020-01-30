@@ -1,0 +1,17 @@
+*{
+  font-family: monospace;
+}
+
+.Header{
+  background-color: royalblue;
+  text-align: center;
+}
+
+.Footer{
+  background-color: red;
+  text-align: center;
+}
+
+.Madlib{
+  background-color: salmon;
+}

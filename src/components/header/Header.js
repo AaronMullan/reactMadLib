@@ -1,8 +1,11 @@
 import React from 'react';
+import styles from '../App.css';
 
 const Header = () => (
   <>
-    <h1>Header</h1>
+    <header className={styles.Header}>
+      <h1>Header</h1>
+    </header>
   </>
 );
 

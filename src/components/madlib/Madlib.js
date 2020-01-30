@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import Result from './Result';
-import Button from '../Button/Button';
+import styles from '../App.css';
 
 export default class Madlib extends Component{
   state = {
@@ -22,8 +22,10 @@ export default class Madlib extends Component{
     const { showResult, words } = this.state;
     return (
       <>
-        {!showResult && <Form onSubmit={this.handleSubmit} />}
-        {showResult && <Result words={ words } closeResult={this.toggleResult} />}
+        <div className={styles.Madlib}>
+          {!showResult && <Form onSubmit={this.handleSubmit} />}
+          {showResult && <Result words={ words } closeResult={this.toggleResult} />}
+        </div>
       </>
     );
   }
