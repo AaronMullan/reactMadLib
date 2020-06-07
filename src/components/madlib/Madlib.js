@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import Result from './Result';
+import styles from '../App.css';
+
 
 export default class Madlib extends Component{
   state = {
-    showResult: false
+    showResult: false,
   }
 
   toggleResult = () =>
@@ -13,14 +15,18 @@ export default class Madlib extends Component{
   handleSubmit = event => {
     event.preventDefault();
     this.toggleResult();
-  }
+    const inputs = [...event.target].map(input => input.value);
+    this.setState({ words: inputs });
+  };
 
   render() {
-    const { showResult } = this.state;
+    const { showResult, words } = this.state;
     return (
       <>
-        {!showResult && <Form onSubmit={this.handleSubmit} />}
-        {showResult && <Result words={[]} closeResult={this.toggleResult} />}
+        <div className={styles.Madlib}>
+          {!showResult && <Form onSubmit={this.handleSubmit} />}
+          {showResult && <Result words={ words } closeResult={this.toggleResult} />}
+        </div>
       </>
     );
   }
